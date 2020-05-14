@@ -1,3 +1,5 @@
+com.devops;
+
 import java.net.InetAddress;
 import java.net.NetworkInterface;
 import java.net.SocketException;
@@ -69,7 +71,7 @@ public class LocalHostUtil {
     public static String osName() {
         return System.getProperty("os.name");
     }
-
+/*
     public static void main(String[] args) {
         try {
             SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
@@ -87,4 +89,5 @@ public class LocalHostUtil {
             e.printStackTrace();
         }
     }
+*/    
 }
