@@ -19,6 +19,7 @@
 	</parent>
 
 <!-- 设置maven.aliyun.com仓库 -->
+<!-- 	
 	<repositories>
 		<repository>
 			<id>nexus-aliyun</id>
@@ -32,6 +33,7 @@
 			</snapshots>
 		</repository>
 	</repositories>
+-->
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
