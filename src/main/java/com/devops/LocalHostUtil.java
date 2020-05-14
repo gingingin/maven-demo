@@ -7,6 +7,8 @@ import java.util.Enumeration;
 import java.util.List;
 import java.util.HashMap;
 import java.util.Map.Entry;
+import java.util.Date;
+import java.text.SimpleDateFormat;
 
 public class LocalHostUtil {
 
@@ -51,18 +53,11 @@ public class LocalHostUtil {
                 if (addr.isLoopbackAddress() || !addr.isSiteLocalAddress() || addr.isAnyLocalAddress()) {
                     continue;
                 }
-		//list.add(addr.getHostAddress());
+                //list.add(addr.getHostAddress());
                 map.put(intf.getDisplayName(),addr.getHostAddress());
             }
         }
-        //return list.toArray(new String[0]);
-        for (Entry<String, String> entry : map.entrySet()) {
-			String key = entry.getKey();
-			String value = entry.getValue();
-			System.out.println(key + ":" + value);
-		}
-	//System.out.println("=========================");
-	return map; //System.out.println(map);
+        return map; //System.out.println(map);
         //return list.toArray(new String[0]);
     }
 
@@ -77,10 +72,16 @@ public class LocalHostUtil {
 
     public static void main(String[] args) {
         try {
+            SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
+            System.out.println("系统时间：" + df.format(new Date()));// new Date()为获取当前系统时间
             System.out.println("操作系统：" + LocalHostUtil.osName());
             System.out.println("主机名称：" + LocalHostUtil.getHostName());
             //System.out.println("系统首选IP：" + LocalHostUtil.getLocalIP());
-            System.out.println("网络接口IP：\n" + LocalHostUtil.getLocalIPs());
+            for (Entry<String, String> entry : LocalHostUtil.getLocalIPs().entrySet()) {
+                String key = entry.getKey();
+                String value = entry.getValue();
+                System.out.println(key + "网口IP: " + value);
+            }
         } catch (UnknownHostException e) {
         } catch (Exception e) {
             e.printStackTrace();
