@@ -36,9 +36,9 @@ public class LocalHostUtil {
      * @return
      * @throws SocketException
      */
-    public static Object getLocalIPs() throws SocketException {
+    public static HashMap<String, String> getLocalIPs() throws SocketException {
         HashMap<String, String> map = new HashMap<>();
-        List<String> list = new ArrayList<>();
+        //List<String> list = new ArrayList<>();
         Enumeration<NetworkInterface> enumeration = NetworkInterface.getNetworkInterfaces();
         while (enumeration.hasMoreElements()) {
             NetworkInterface intf = enumeration.nextElement();
@@ -51,7 +51,7 @@ public class LocalHostUtil {
                 if (addr.isLoopbackAddress() || !addr.isSiteLocalAddress() || addr.isAnyLocalAddress()) {
                     continue;
                 }
-		list.add(addr.getHostAddress());
+		//list.add(addr.getHostAddress());
                 map.put(intf.getDisplayName(),addr.getHostAddress());
             }
         }
