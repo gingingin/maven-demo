@@ -1,4 +1,4 @@
-com.devops;
+package com.devops;
 
 import java.net.InetAddress;
 import java.net.NetworkInterface;
