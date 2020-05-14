@@ -6,12 +6,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class MyService {
 
-	@RequestMapping("/")
-	LocalHostUtil.main()
-	/*	
+	@RequestMapping("/")	
 	public String hello()
 	{
-		return "Hello";
-	}*/
+		LocalHostUtil.main();
+	}
 	
 }
