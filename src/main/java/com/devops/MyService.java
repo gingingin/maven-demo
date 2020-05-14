@@ -81,10 +81,10 @@ public class MyService {
         try {
             SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
             System.out.println("系统时间：" + df.format(new Date()));// new Date()为获取当前系统时间
-            System.out.println("操作系统：" + LocalHostUtil.osName());
-            System.out.println("主机名称：" + LocalHostUtil.getHostName());
-            //System.out.println("系统首选IP：" + LocalHostUtil.getLocalIP());
-            for (Entry<String, String> entry : LocalHostUtil.getLocalIPs().entrySet()) {
+            System.out.println("操作系统：" + MyService.osName());
+            System.out.println("主机名称：" + MyService.getHostName());
+            //System.out.println("系统首选IP：" + MyService.getLocalIP());
+            for (Entry<String, String> entry : MyService.getLocalIPs().entrySet()) {
                 String key = entry.getKey();
                 String value = entry.getValue();
                 System.out.println(key + "网口IP: " + value);
