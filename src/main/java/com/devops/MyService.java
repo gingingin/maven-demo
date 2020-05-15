@@ -77,7 +77,8 @@ public class MyService {
     }
     
     @RequestMapping("/")
-    public static void main(String[] args) {
+    //public static void main(String[] args) {
+    public static String info() {    
         try {
             SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
             System.out.println("系统时间：" + df.format(new Date()));// new Date()为获取当前系统时间
